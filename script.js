@@ -21,8 +21,23 @@ for (let i = 0 ; i < btnsOpenModal.length; i++){
     })
 }
 
-btnCloseModal.addEventListener('click',function(){
-    modal.classList.add('hidden');
-    overlay.classList.add('hidden');
-    modal.style.display = 'none';
-})
+// btnCloseModal.addEventListener('click',function(){
+//     modal.classList.add('hidden');
+//     overlay.classList.add('hidden');
+//     modal.style.display = 'none ';
+// }) 
+
+// here we create a closeModal function 
+
+const closeModal = function(){
+        modal.classList.add('hidden');
+        overlay.classList.add('hidden');
+        modal.style.display = 'none ';
+    };
+
+    // this will close the modal when we click on close button inside the modal
+btnCloseModal.addEventListener('click',closeModal);
+
+// this will close the modal when we click outside the modal
+
+overlay.addEventListener('click',closeModal);
