@@ -68,3 +68,24 @@ btnCloseModal.addEventListener('click',closeModal);
 // this will close the modal when we click outside the modal
 
 overlay.addEventListener('click',closeModal);
+
+
+//==============================================================
+
+// adding 3rd method to close modal -: key Press events
+
+document.addEventListener('keyup', function(event){
+    console.log('A key was pressed...');
+
+    // accessing key property of keyBoardEvent()
+    console.log(event.key);
+
+    // checking if user pressed escape key or not && check hidden class is present in modal or not
+
+    if(event.key === 'Escape' && !modal.classList.contains('hidden')){
+        console.log('Escape key is pressed...');
+
+        // calling the closeModal() function.
+        closeModal();
+    }
+})
